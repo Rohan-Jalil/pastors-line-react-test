@@ -1,0 +1,28 @@
+$buttonA-color: #46139f;
+$buttonB-color: #ff7f50;
+
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home {
+  &_buttonA {
+    background-color:  $buttonA-color;
+    padding: 6px 6px;
+    border: none;
+    color: white;
+  }
+  &_buttonB {
+    background-color:  $buttonB-color;
+    padding: 6px 6px;
+    border: none;
+    color: white
+  }
+  &_buttonC{
+    background-color: white;
+    border:1px solid #46139f
+  }
+}
