@@ -1,0 +1,17 @@
+.modal-container {
+  max-width: 700px;
+}
+.custom-transition {
+  animation-name: mymove;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes mymove {
+  from {
+    top: -300px;
+  }
+  to {
+    top: 0px;
+  }
+}

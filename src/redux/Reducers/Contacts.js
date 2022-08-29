@@ -5,9 +5,9 @@ import {
 } from 'redux/Constants/Constants';
 
 const INITIAL_STATE = {
-  contacts: {},
+  contacts: [],
   contactsUpdating: false,
-  contactDetail: {},
+  contactDetail: null,
 };
 
 const contacts = (state = INITIAL_STATE, action) => {

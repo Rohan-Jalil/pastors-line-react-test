@@ -1,15 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
 
-const SearchBox = ({title, searchHandler, query}) => {
+const SearchBox = ({searchHandler}) => {
   const [searchTerm, setSearchTerm] = useState('');
   useEffect(() => {
     const delayTimeout = setTimeout(() => {
       searchHandler({searchTerm});
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(delayTimeout);
     // eslint-disable-next-line
@@ -22,22 +19,26 @@ const SearchBox = ({title, searchHandler, query}) => {
 
   return (
     <>
-      <InputGroup className='mb-3'>
-        <Form.Control
-          placeholder={title || 'Search by Name'}
-          aria-label='SearchBox'
-          aria-describedby='SearchBox'
+      <div className='input-group mb-3'>
+        <input
+          type='text'
+          className='form-control'
+          placeholder='Search'
+          aria-label='Search'
+          aria-describedby='SearchField'
           onChange={changeHandler}
           value={searchTerm}
         />
-        <Button
-          variant='outline-secondary'
-          id='search'
-          onClick={() => searchHandler({searchTerm})}
-        >
-          Search
-        </Button>
-      </InputGroup>
+        <div className='input-group-append'>
+          <button
+            className='input-group-text'
+            id='SearchField'
+            onClick={() => searchHandler({searchTerm})}
+          >
+            Search
+          </button>
+        </div>
+      </div>
     </>
   );
 };
