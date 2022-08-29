@@ -1,5 +1,13 @@
 export const transformContacts = (data) => {
   // transform
-  const contacts = data.contacts ? data.contacts : {};
+
+  let contacts_ids = data.contacts_ids;
+  let contacts = [];
+
+  contacts_ids.forEach((val) => {
+    if (data.contacts[val]) {
+      contacts.push(data.contacts[val]);
+    }
+  });
   return contacts;
 };
